@@ -14,9 +14,9 @@ importers:
 
   apps/app:
     dependencies:
-      '@monorepo/ui':
+      '@zinovev.iv/monorepo-demo-client':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/client
       react:
         specifier: ^19.0.0
         version: 19.2.3
@@ -42,9 +42,9 @@ importers:
 
   apps/shell:
     dependencies:
-      '@monorepo/ui':
+      '@zinovev.iv/monorepo-demo-platform':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/platform
       react:
         specifier: ^19.0.0
         version: 19.2.3
@@ -67,6 +67,31 @@ importers:
       vite:
         specifier: ^6.0.0
         version: 6.4.1
+
+  packages/client:
+    devDependencies:
+      typescript:
+        specifier: ^5.7.0
+        version: 5.9.3
+
+  packages/platform:
+    dependencies:
+      react:
+        specifier: ^19.0.0
+        version: 19.2.3
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.2.3(react@19.2.3)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.8
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.8)
+      typescript:
+        specifier: ^5.7.0
+        version: 5.9.3
 
   packages/ui:
     dependencies:
