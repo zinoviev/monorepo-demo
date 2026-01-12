@@ -2,8 +2,8 @@
   "name": "monorepo-demo",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter @monorepo/host dev",
-    "build": "pnpm --filter @monorepo/ui build && pnpm --filter @monorepo/host build",
+    "dev": "pnpm --filter @monorepo/shell --filter @monorepo/app dev",
+    "build": "pnpm --filter @monorepo/ui build && pnpm --filter @monorepo/shell --filter @monorepo/app build",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish"

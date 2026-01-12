@@ -5,19 +5,19 @@ export function App() {
     <div
       style={{
         minHeight: "100vh",
+        backgroundColor: "#7c3aed",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "system-ui, -apple-system, sans-serif",
-        backgroundColor: "#f5f5f5",
         gap: "24px",
       }}
     >
-      <h1 style={{ fontSize: "48px", margin: 0, color: "#1a1a1a" }}>
-        Hello World
+      <h1 style={{ fontSize: "48px", margin: 0, color: "white" }}>
+        this is app
       </h1>
-      <Button onClick={() => alert("Button clicked!")}>Click me</Button>
+      <Button onClick={() => alert("Clicked!")}>Button from UI</Button>
     </div>
   );
 }
