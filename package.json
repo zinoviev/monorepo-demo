@@ -1,0 +1,14 @@
+{
+  "name": "monorepo-demo",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @monorepo/host dev",
+    "build": "pnpm --filter @monorepo/ui build && pnpm --filter @monorepo/host build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1"
+  }
+}
