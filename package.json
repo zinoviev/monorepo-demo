@@ -4,9 +4,10 @@
   "scripts": {
     "dev": "pnpm --filter @monorepo/shell --filter @monorepo/app dev",
     "build": "pnpm --filter @monorepo/ui build && pnpm --filter @monorepo/shell --filter @monorepo/app build",
+    "build:packages": "pnpm --filter '@zinoviev/*' build",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "changeset publish"
+    "release": "pnpm build:packages && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1"

@@ -7,11 +7,12 @@
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
-    "declaration": true,
-    "declarationMap": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationMap": true
   },
   "include": ["src"]
 }
