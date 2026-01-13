@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { Container, ContainerHandle } from "@zinovev.iv/monorepo-demo-platform";
+import { Container, ContainerHandle } from "@zinoviev/monorepo-demo-platform";
 
 interface ChatMessage {
   id: number;
@@ -64,7 +64,10 @@ export function App() {
         <h2 style={{ margin: "0 0 8px 0", color: "#1a1a1a" }}>Shell Chat</h2>
 
         {/* Status indicator */}
+        {/* Status indicator */}
         <div
+          data-testid="shell-status"
+          data-status={isReady ? "connected" : "initializing"}
           style={{
             display: "flex",
             alignItems: "center",
@@ -87,6 +90,7 @@ export function App() {
 
         {/* Messages */}
         <div
+          data-testid="shell-messages"
           style={{
             flex: 1,
             overflowY: "auto",
@@ -105,6 +109,7 @@ export function App() {
             messages.map((msg) => (
               <div
                 key={msg.id}
+                data-testid={`shell-message-${msg.from}`}
                 style={{
                   padding: "8px 12px",
                   marginBottom: "8px",
@@ -135,6 +140,7 @@ export function App() {
         {/* Input */}
         <div style={{ display: "flex", gap: "8px" }}>
           <input
+            data-testid="shell-input"
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
@@ -151,6 +157,7 @@ export function App() {
             }}
           />
           <button
+            data-testid="shell-send-button"
             onClick={handleSend}
             disabled={!isReady || !inputValue.trim()}
             style={{

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { context } from "@zinovev.iv/monorepo-demo-client";
+import { context } from "@zinoviev/monorepo-demo-client";
 
 interface ChatMessage {
   id: number;
@@ -64,6 +64,8 @@ export function App() {
 
       {/* Status indicator */}
       <div
+        data-testid="app-status"
+        data-status={isReady ? "connected" : "initializing"}
         style={{
           display: "flex",
           alignItems: "center",
@@ -86,6 +88,7 @@ export function App() {
 
       {/* Messages */}
       <div
+        data-testid="app-messages"
         style={{
           flex: 1,
           overflowY: "auto",
@@ -103,6 +106,7 @@ export function App() {
           messages.map((msg) => (
             <div
               key={msg.id}
+              data-testid={`app-message-${msg.from}`}
               style={{
                 padding: "8px 12px",
                 marginBottom: "8px",
@@ -132,6 +136,7 @@ export function App() {
       {/* Input */}
       <div style={{ display: "flex", gap: "8px" }}>
         <input
+          data-testid="app-input"
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
@@ -149,6 +154,7 @@ export function App() {
           }}
         />
         <button
+          data-testid="app-send-button"
           onClick={handleSend}
           disabled={!isReady || !inputValue.trim()}
           style={{
