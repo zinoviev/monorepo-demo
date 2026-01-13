@@ -70,6 +70,7 @@ export const Container = forwardRef<ContainerHandle, ContainerProps>(
         height={height}
         style={{ border: "none" }}
         title="App Container"
+        data-testid="app-iframe"
       />
     );
   }
