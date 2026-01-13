@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@zinovev.iv/monorepo-demo-platform": "workspace:*",
+    "@zinoviev/monorepo-demo-platform": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

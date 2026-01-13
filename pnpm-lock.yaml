@@ -14,7 +14,7 @@ importers:
 
   apps/app:
     dependencies:
-      '@zinovev.iv/monorepo-demo-client':
+      '@zinoviev/monorepo-demo-client':
         specifier: workspace:*
         version: link:../../packages/client
       react:
@@ -42,7 +42,7 @@ importers:
 
   apps/shell:
     dependencies:
-      '@zinovev.iv/monorepo-demo-platform':
+      '@zinoviev/monorepo-demo-platform':
         specifier: workspace:*
         version: link:../../packages/platform
       react:
