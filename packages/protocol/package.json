@@ -1,6 +1,6 @@
 {
-  "name": "@zinoviev/monorepo-demo-client",
-  "version": "2.0.0",
+  "name": "@zinoviev/monorepo-demo-protocol",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@zinoviev/monorepo-demo-protocol": "workspace:*"
+    "zod": "^4.0.0"
   },
   "devDependencies": {
     "typescript": "^5.7.0"

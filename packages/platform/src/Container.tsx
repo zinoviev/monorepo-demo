@@ -5,7 +5,7 @@ import {
   useRef,
   useCallback,
 } from "react";
-import type { Message } from "./types";
+import { parseMessage, type Message } from "@zinoviev/monorepo-demo-protocol";
 
 export interface ContainerHandle {
   sendMessage: (message: string) => void;
@@ -41,9 +41,9 @@ export const Container = forwardRef<ContainerHandle, ContainerProps>(
     );
 
     useEffect(() => {
-      const handleMessage = (event: MessageEvent<Message>) => {
-        const data = event.data;
-        if (!data || typeof data !== "object" || !("type" in data)) return;
+      const handleMessage = (event: MessageEvent) => {
+        const data = parseMessage(event.data);
+        if (!data) return;
 
         switch (data.type) {
           case "init":

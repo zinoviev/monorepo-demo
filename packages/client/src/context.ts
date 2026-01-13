@@ -1,4 +1,4 @@
-import type { Message } from "./types";
+import { parseMessage, type Message } from "@zinoviev/monorepo-demo-protocol";
 
 type ReadyCallback = () => void;
 type MessageCallback = (message: string) => void;
@@ -13,9 +13,9 @@ function sendToHost(msg: Message) {
 }
 
 // Listen for messages from host
-window.addEventListener("message", (event: MessageEvent<Message>) => {
-  const data = event.data;
-  if (!data || typeof data !== "object" || !("type" in data)) return;
+window.addEventListener("message", (event: MessageEvent) => {
+  const data = parseMessage(event.data);
+  if (!data) return;
 
   switch (data.type) {
     case "bootstrap":
